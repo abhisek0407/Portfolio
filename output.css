@@ -5,6 +5,7 @@
   :root, :host {
     --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-green-100: oklch(96.2% 0.044 156.743);
@@ -238,6 +239,9 @@
   .grid {
     display: grid;
   }
+  .table {
+    display: table;
+  }
   .h-10 {
     height: calc(var(--spacing) * 10);
   }
@@ -255,6 +259,9 @@
   }
   .h-full {
     height: 100%;
+  }
+  .min-h-107 {
+    min-height: calc(var(--spacing) * 107);
   }
   .min-h-107\.5 {
     min-height: calc(var(--spacing) * 107.5);
@@ -289,8 +296,17 @@
   .flex-1 {
     flex: 1;
   }
+  .flex-shrink {
+    flex-shrink: 1;
+  }
   .shrink-0 {
     flex-shrink: 0;
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .resize {
+    resize: both;
   }
   .list-disc {
     list-style-type: disc;
@@ -464,6 +480,9 @@
   .p-8 {
     padding: calc(var(--spacing) * 8);
   }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
   .px-3 {
     padding-inline: calc(var(--spacing) * 3);
   }
@@ -502,6 +521,12 @@
   }
   .text-center {
     text-align: center;
+  }
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+  .font-serif {
+    font-family: var(--font-serif);
   }
   .text-2xl {
     font-size: var(--text-2xl);
@@ -579,9 +604,16 @@
   .text-white {
     color: var(--color-white);
   }
+  .underline {
+    text-decoration-line: underline;
+  }
   .shadow-lg {
     --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
   }
   .transition-all {
     transition-property: all;
@@ -1056,6 +1088,11 @@ html {
   inherits: false;
   initial-value: 0 0 #0000;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @property --tw-duration {
   syntax: "*";
   inherits: false;
@@ -1124,6 +1161,7 @@ html {
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-outline-style: solid;
       --tw-duration: initial;
       --tw-ease: initial;
       --tw-translate-x: 0;
